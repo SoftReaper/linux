@@ -122,6 +122,13 @@ else
         cflags-$(CONFIG_MCORE2)		+= -march=core2
         cflags-$(CONFIG_MATOM)		+= -march=atom
         cflags-$(CONFIG_GENERIC_CPU)	+= -mtune=generic
+	ifeq ($(MCUSTOM),y)
+		cflags-$(CONFIG_MCUSTOM)	+= -march=$(MCUSTOM_VALUE)
+		ifeq ($(MCUSTOM_MTUNE),y)
+			cflags-$(CONFIG_MCUSTOM)	+= -mtune=$(MCUSTOM_VALUE)
+		endif
+	endif
+
         KBUILD_CFLAGS += $(cflags-y)
 
         KBUILD_CFLAGS += -mno-red-zone
@@ -142,6 +149,7 @@ ifdef CONFIG_X86_X32
                 $(warning CONFIG_X86_X32 enabled but no binutils support)
         endif
 endif
+
 export CONFIG_X86_X32_ABI
 
 #

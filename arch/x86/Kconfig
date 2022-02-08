@@ -876,6 +876,21 @@ endif #HYPERVISOR_GUEST
 
 source "arch/x86/Kconfig.cpu"
 
+config MCUSTOM_VALUE
+        string "Custom -march value"
+        depends on MCUSTOM     
+        default ""
+        help
+          Enter arguments here that should be used to compile your kernel
+          image
+
+config MCUSTOM_MTUNE
+        bool "Set -mtune to the same value as -march"
+        depends on MCUSTOM
+        help
+          This option allows to set -mtune parameter to the same value as
+	  -march previously set on "Custom -march value"
+
 config HPET_TIMER
 	def_bool X86_64
 	prompt "HPET Timer Support" if X86_32
