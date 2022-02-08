@@ -1,3 +1,14 @@
+Welcome to this repo. Here is my work to build an optimized kernel to 
+my GA401IV. You can find the assorciated config file at GA401I.config
+
+Some modifications have been made to kernel's makefile and Kconfig on 
+arch/x86 to enables me to pass my march and mtune c_args to the kernel
+at build time.
+
+*************************************************************************
+                        original README
+*************************************************************************
+
 Linux kernel
 ============
 
