@@ -1,0 +1,25 @@
+Source: cpupower
+Priority: optional
+Maintainer: SoftReaper <softreaper@unknown>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.1
+Section: libs
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Browser: https://salsa.debian.org/debian/cpupower
+#Vcs-Git: https://salsa.debian.org/debian/cpupower.git
+Rules-Requires-Root: no
+
+Package: cpupower-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: cpupowerBROKEN (= ${binary:Version}), ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: cpupowerBROKEN
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
