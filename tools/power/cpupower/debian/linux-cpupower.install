@@ -1,0 +1,4 @@
+usr/bin/*
+usr/sbin/*
+usr/share/bash-completion/completions/cpupower
+usr/share/locale/*/LC_MESSAGES/*
