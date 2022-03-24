@@ -9,17 +9,38 @@ Homepage: <insert the upstream URL, if relevant>
 #Vcs-Git: https://salsa.debian.org/debian/cpupower.git
 Rules-Requires-Root: no
 
-Package: cpupower-dev
-Section: libdevel
-Architecture: any
-Multi-Arch: same
-Depends: cpupowerBROKEN (= ${binary:Version}), ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
-
-Package: cpupowerBROKEN
-Architecture: any
-Multi-Arch: same
+Package: libcpupower1
+Section: libs
+Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: CPU frequency and voltage scaling tools for Linux (libraries)
+ libcpupower is a library for inspecting and controlling cpufreq and cpuidle tunables.
+ 
+ This package contains the shared library.
+
+Package: libcpupower-dev
+Section: libs    
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: CPU frequency and voltage scaling tools for Linux (development files)
+ libcpupower is a library for inspecting and controlling cpufreq and cpuidle tunables.
+ 
+ This package is needed to compile programs against libcpupower.
+
+Package: linux-cpupower
+Section: libdevel
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: CPU power management tools for Linux
+ The cpupower command allows inspection and control 
+ of cpufreq and cpuidle tunables for hardware that 
+ supports these features. It replaces "cpufreq-info" 
+ and "cpufreq-set" in cpufrequtils.
+ 
+ The turbostat command reports topology, frequency,
+  idle power-state statistics, temperature and power
+  consumption information as provided by the CPU.
+ 
+ The x86_energy_perf_policy command sets a general 
+ policy on some Intel CPU models for the relative 
+ importance of performance versus energy savings.
