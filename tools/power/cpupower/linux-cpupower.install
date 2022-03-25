@@ -1,7 +1,0 @@
-usr/bin/*
-etc/cpufreq-bench.conf
-usr/sbin/*
-usr/share/bash-completion/completions/cpupower
-usr/share/locale/*/LC_MESSAGES/*
-usr/man/man1/*
-usr/share/doc/packages/cpupower/*
