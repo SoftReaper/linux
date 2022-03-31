@@ -1,6 +1,8 @@
 Welcome to this repo. Here is my work to build an optimized kernel to 
 my GA401IV. You can find the associated config file at GA401I.config
 
+Config files for other laptop could be found here later
+
 Some modifications have been made to kernel's makefile and Kconfig on 
 arch/x86 to enables me to pass my march and mtune c_args to the kernel
 at build time.
@@ -10,10 +12,9 @@ available at this location: LICENSES/FirmwaresSpecifiedInConfig/
 
 usage (non-binary):
 - clone the repo 
-`git clone https://github.com/SoftReaper/linux-image-5.16-znver2.git --depth 1 --branch customized`
 - rename GA401I.config to .config (if wanted)
 - and build it with:
- `make bindeb-pkg -j"$(nproc)" LOCALVERSION=-"$(dpkg --print-architecture)" KDEB_PKGVERSION="$(make kernelversion)-1"` 
+ `make bindeb-pkg -j"$(nproc)" LOCALVERSION=-"$(dpkg --print-architecture)" KDEB_PKGVERSION="$(make kernelversion)"` 
  for debian packages
 or `make -j"$(nproc)" && make -j"$(nproc)" modules` 
 for local install only or any other distribution
