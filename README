@@ -1,5 +1,6 @@
 Welcome to this repo. Here is my work to build an optimized kernel to 
-my GA401IV. You can find the associated config file at GA401I.config
+a Dell Latitude 3550 (haswell iwlwifi/rtl nic). You can find the associated config file at 
+L3550-Haswell.config
 
 Config files for other laptop could be found here later
 
@@ -12,7 +13,7 @@ available at this location: LICENSES/FirmwaresSpecifiedInConfig/
 
 usage (non-binary):
 - clone the repo 
-- rename GA401I.config to .config (if wanted)
+- rename to .config (if wanted)
 - and build it with:
  `make bindeb-pkg -j"$(nproc)" LOCALVERSION=-"$(dpkg --print-architecture)" KDEB_PKGVERSION="$(make kernelversion)"` 
  for debian packages
